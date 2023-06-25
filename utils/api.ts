@@ -1,23 +1,24 @@
-const downloadFile = async (filePath: string, fileName: string) => {
-  const bodyRequest= {
-    filePath,
-    fileName
-  }
+const downloadFile = async (fileName: string, token: string) => {
+  const searchParams = { file: fileName }
 
   try {
-    const response = await fetch(`/api/download-file?filePath=${encodeURIComponent(filePath)}&fileName=${fileName}`, {
-      method: 'POST',
-      body: JSON.stringify(bodyRequest)
+    const response = await fetch(`http://localhost:8183/documentos/download?${new URLSearchParams(searchParams)}`, {
+      headers: {
+        'Content-type': 'application/octet-stream',
+        'Authorization': `Bearer ${token}`,
+      }
     });
 
-    if (response.ok) {
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(new Blob([blob]));
+    const link = document.createElement('a');
+    
+    link.href = url;
+    link.setAttribute('download', fileName);
+    document.body.appendChild(link);
+    link.click();
+    link.parentNode?.removeChild(link);
 
-      window.location.href = url;
-    } else {
-      console.error('Error downloading file: ', response.status);
-    }
   } catch (error) {
     console.error('Error downloading file: ', error);
   }

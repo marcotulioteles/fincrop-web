@@ -1,16 +1,20 @@
 'use client';
 
-import Image from "next/image";
-import downloadFile from "@/utils/api";
 import Link from "next/link";
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/esm/locale'
 import { Download } from "lucide-react";
+import downloadFile from "@/utils/api";
 
 interface RowTableProps {
   fileName: string;
-  fileSize: number;
+  fileSize: string;
   filePath?: string;
+  token: string
+}
+
+const handleDownloadFile = (fileName: string, token: string) => {
+  downloadFile(fileName, token);
 }
 
 const getNowDateFormatted = () => {
@@ -20,17 +24,17 @@ const getNowDateFormatted = () => {
   return now;
 }
 
-const RowTable = ({ fileName = 'arquivo.jpg', filePath = '', fileSize=5407 }: RowTableProps) => {
+const RowTable = ({ fileName, filePath, fileSize, token }: RowTableProps) => {
   const uploadDate = getNowDateFormatted();
   
   return (
-    <div className="md:reset-template-areas row-table-mobile w-full grid grid-cols-4 p-3 border-b-2 border-gray-100">
-      <span className="data-1 justify-self-start break-all">{fileName}</span>
-      <span className="data-2 md:justify-self-center">{fileSize}</span>
-      <span className="data-3 md:justify-self-center">{uploadDate}</span>
-      <Link href={filePath} className="data-4 justify-self-end w-fit h-fit p-1">
+    <div className="grid grid-cols-4 w-full p-3 border-b-2 border-gray-100">
+      <span className="data-1 break-all">{fileName}</span>
+      <span className="data-2 justify-self-center">{fileSize}</span>
+      <span className="data-3 justify-self-center">{uploadDate}</span>
+      <button onClick={() => handleDownloadFile(fileName, token)} className="data-4 justify-self-end p-1">
         <Download className="w-6 h-6 text-yellow-500"/>
-      </Link>
+      </button>
     </div>
   )
 }

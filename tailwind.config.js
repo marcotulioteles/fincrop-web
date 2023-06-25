@@ -17,6 +17,7 @@ module.exports = {
       },
       backgroundImage: {
         'home-circles': "url('/assets/icons/circles.svg')",
+        'not-found': "url('/assets/icons/not-found.svg')",
       },
       colors: {
         'my-files': '#F2F2F3',
