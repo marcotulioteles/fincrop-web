@@ -1,6 +1,6 @@
 'use client';
 
-import { Loader, Pointer, Wheat } from 'lucide-react'
+import { Loader, Pointer, User2 } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image';
 import Link from 'next/link'
@@ -20,7 +20,13 @@ const Welcome = () => {
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
       <div>
-        <Image className='rounded-full' src={session.user.image ?? ''} alt='user photo' width={96} height={96} />
+        { !session.user.email ? (
+          <div className='w-24 h-24 flex items-center justify-center rounded-full'>
+            <User2 className='w-20 h-20 text-gray-600'/>
+          </div>
+        ) : (
+          <Image className='rounded-full' src={session.user.image ?? ''} alt='user photo' width={96} height={96} />
+        ) }
       </div>
       <h2 className='text-white text-center text-4xl'><span className='text-2xl'></span>👋 {session.user.name}</h2>
       <p className='text-white text-center text-xl'>Seja muito bem vindo!</p>

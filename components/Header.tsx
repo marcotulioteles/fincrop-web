@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Bell, Folder, Home, LogOut, Menu } from 'lucide-react';
+import { Bell, Folder, Home, LogOut, Menu, User2 } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -45,7 +45,9 @@ const Header = () => {
                     <div className="border-2 border-white outline outline-blue-800 outline-2 w-8 h-8 rounded-full">
                       { session?.user?.image 
                         ? <Image src={session.user.image} alt="avatar image" width={32} height={32} className="rounded-full"/> 
-                        : null 
+                        : <div className='w-8 h-8 flex items-center justify-center rounded-full'>
+                            <User2 className='w-6 h-6 text-gray-600'/>
+                          </div> 
                       }
                     </div>
                     <span className='text-xs text-gray-500'>{session.user.name}</span>
@@ -85,7 +87,9 @@ const Header = () => {
               <div className="border-2 border-white outline outline-blue-800 outline-2 w-8 h-8 rounded-full">
                 { session?.user?.image 
                   ? <Image src={session.user.image} alt="avatar image" width={32} height={32} className="rounded-full"/> 
-                  : null 
+                  : <div className='w-8 h-8 flex items-center justify-center rounded-full'>
+                      <User2 className='w-6 h-6 text-gray-600'/>
+                    </div> 
                 }
               </div>
             </div>

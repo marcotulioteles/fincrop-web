@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/esm/locale'
 import { Download } from "lucide-react";
@@ -32,7 +31,8 @@ const RowTable = ({ fileName, filePath, fileSize, token }: RowTableProps) => {
       <span className="grid-in-data1 break-all">{fileName}</span>
       <span className="grid-in-data2 justify-self-start text-xs md:justify-self-center md:text-base">{fileSize}</span>
       <span className="grid-in-data3 justify-self-start text-xs md:justify-self-center md:text-base">{uploadDate}</span>
-      <button 
+      <button
+        
         onClick={() => handleDownloadFile(fileName, token)} 
         className="grid-in-data4 justify-self-end p-2 hover:animate-bounce hover:bg-gray-50 ease-in-out rounded-full"
       >

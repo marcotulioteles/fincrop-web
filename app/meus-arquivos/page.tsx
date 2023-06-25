@@ -83,9 +83,6 @@ const MyFiles = () => {
               value={searchValue}
               onChange={handleSearch} 
             />
-            {/* <button type='button' className="font-normal text-white text-xs p-3 bg-yellow-500 rounded w-full sm:w-fit">
-              Pesquisar
-            </button> */}
           </form>
           <div className="hidden w-full md:grid grid-cols-4 mt-6 py-3 border-b-2 border-gray-100">
             <span className="justify-self-start font-bold text-sm text-gray-900">Nome do arquivo</span>

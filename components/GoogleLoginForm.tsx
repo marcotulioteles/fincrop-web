@@ -1,7 +1,6 @@
 'use client';
 
 import { signIn, useSession } from 'next-auth/react';
-import Image from 'next/image';
 import { FcGoogle } from 'react-icons/fc'
 
 const GoogleLoginForm = () => {
