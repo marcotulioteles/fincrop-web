@@ -2,26 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.circles__background {
+  @apply bg-home-circles bg-no-repeat bg-right
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.row-table-mobile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap-column: 4px;
+  
+  @media (max-width: 767px) {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+      "data-1 data-1 data-1 data-4"
+      "data-2 data-2 data-2 data-4"
+      "data-3 data-3 data-3 data-4"
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.data-1 {
+  @media (max-width: 767px) {
+    grid-area: data-1;
+  }
+}
+
+.data-2 {
+  @media (max-width: 767px) {
+    grid-area: data-2;
+    justify-self: start;
+    align-self: center;
+    font-size: 12px;
+  }
+}
+
+.data-3 {
+  @media (max-width: 767px) {
+    grid-area: data-3;
+    justify-self: start;
+    align-self: center;
+    font-size: 12px;
+  }
+}
+
+.data-4 {
+  @media (max-width: 767px) {
+    grid-area: data-4;
+    align-self: center;
+  }
 }
