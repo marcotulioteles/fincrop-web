@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       gridTemplateAreas: {
         'row_mobile': [
-          'data1 data1 data1 data4',
+          'data1 data1 data1 data1',
           'data2 data2 data2 data4',
           'data3 data3 data3 data4',
         ],
@@ -76,6 +76,15 @@ module.exports = {
           900: '#1a0d00'
         }
       },
+      keyframes: {
+        dropdown: {
+          '0%': { top: '-285px' },
+          '100%': { top: '24px' },
+        }
+      },
+      animation: {
+        dropdown: 'dropdown 0.5s ease-in-out',
+      }
     },
   },
   plugins: [

@@ -2,9 +2,8 @@ const downloadFile = async (fileName: string, token: string) => {
   const searchParams = { file: fileName }
 
   try {
-    const response = await fetch(`http://localhost:8183/documentos/download?${new URLSearchParams(searchParams)}`, {
+    const response = await fetch(`http://localhost:8183/documentos/arquivos-download/${fileName}`, {
       headers: {
-        'Content-type': 'application/octet-stream',
         'Authorization': `Bearer ${token}`,
       }
     });
