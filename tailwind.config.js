@@ -7,6 +7,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateAreas: {
+        'row_mobile': [
+          'data1 data1 data1 data4',
+          'data2 data2 data2 data4',
+          'data3 data3 data3 data4',
+        ],
+        'row_desktop': [
+          'data1 data2 data3 data4',
+        ],
+      },
+      gridTemplateColumns: {
+        'row_mobile': '1fr 1fr 1fr 1fr',
+        'row_desktop': '1fr 1fr 1fr 1fr'
+      },
+      gridTemplateRows: {
+        'row_mobile': '1fr 1fr 1fr',
+        'row_desktop': '1fr'
+      },
       screens: {
         'smart-phone': '320px',
         'desktop': '1320px'
@@ -60,5 +78,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@savvywombat/tailwindcss-grid-areas')
+  ],
 }

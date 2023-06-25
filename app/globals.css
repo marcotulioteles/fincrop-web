@@ -10,48 +10,42 @@
   @apply bg-not-found bg-no-repeat bg-right
 }
 
+/* <div className="grid grid-cols-4 w-full p-3 border-b-2 border-gray-100">
+      <span className="data-1 break-all">{fileName}</span>
+      <span className="data-2 justify-self-center">{fileSize}</span>
+      <span className="data-3 justify-self-center">{uploadDate}</span>
+      <button onClick={() => handleDownloadFile(fileName, token)} className="data-4 justify-self-end p-1">
+        <Download className="w-6 h-6 text-yellow-500"/>
+      </button>
+    </div> */
+
+/* .row-table-desktop {
+  display: flex;
+  align-items: center;
+  grid-template-areas: '';
+} */
+
 /* .row-table-mobile {
-  grid-template-areas: 
-    "data-1 data-1 data-1 data-4"
-    "data-2 data-2 data-2 data-4"
-    "data-3 data-3 data-3 data-4";
+  @media only screen and (max-width: 767px) {
+    grid-template-areas: 
+      "data-1 data-1 data-1 data-4"
+      "data-2 data-2 data-2 data-4"
+      "data-3 data-3 data-3 data-4";
+  }
 }
 
 .data-1 {
   grid-area: data-1;
-
-  @media(min-width: 768px) {
-    grid-area: '';
-  }
 }
 
 .data-2 {
   grid-area: data-2;
-  justify-self: start;
-  align-self: start;
-  font-size: 12px;
-
-  @media(min-width: 768px) {
-    grid-area: '';
-  }
 }
 
 .data-3 {
   grid-area: data-3;
-  justify-self: start;
-  align-self: start;
-  font-size: 12px;
-
-  @media(min-width: 768px) {
-    grid-area: '';
-  }
 }
 
 .data-4 {
   grid-area: data-4;
-  align-self: center;
-
-  @media(min-width: 768px) {
-    grid-area: '';
-  }
 } */

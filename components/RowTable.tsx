@@ -28,11 +28,11 @@ const RowTable = ({ fileName, filePath, fileSize, token }: RowTableProps) => {
   const uploadDate = getNowDateFormatted();
   
   return (
-    <div className="grid grid-cols-4 w-full p-3 border-b-2 border-gray-100">
-      <span className="data-1 break-all">{fileName}</span>
-      <span className="data-2 justify-self-center">{fileSize}</span>
-      <span className="data-3 justify-self-center">{uploadDate}</span>
-      <button onClick={() => handleDownloadFile(fileName, token)} className="data-4 justify-self-end p-1">
+    <div className="w-full p-3 border-b-2 border-gray-100 grid grid-areas-row_mobile grid-cols-row_mobile grid-rows-row_mobile md:grid-areas-row_desktop md:grid-cols-row_desktop md:grid-rows-row_desktop">
+      <span className="grid-in-data1 break-all">{fileName}</span>
+      <span className="grid-in-data2 justify-self-start text-xs md:justify-self-center md:text-base">{fileSize}</span>
+      <span className="grid-in-data3 justify-self-start text-xs md:justify-self-center md:text-base">{uploadDate}</span>
+      <button onClick={() => handleDownloadFile(fileName, token)} className="grid-in-data4 justify-self-end p-1">
         <Download className="w-6 h-6 text-yellow-500"/>
       </button>
     </div>
