@@ -4,7 +4,7 @@ import { ShieldQuestion, Undo2 } from 'lucide-react';
 import Link from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
 
-const Error = ({ error }: { error: any }) => {
+const Error = () => {
   return (
     <main className='w-full min-h-[calc(100vh-48px)] flex flex-col items-center justify-center bg-blue-800 not-found__background'>
       <h1 className='font-alt text-7xl font-normal text-white mb-10'>FINCROP</h1>
