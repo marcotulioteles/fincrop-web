@@ -42,6 +42,11 @@ Abra um browser de sua preferência e digite na barra de endereço: `localhost:3
 
 A aplicação front está configurada para se comunicar com o serviço backend (desenvolvido em Java + SpringBoot) através da porta `localhost:8183` , dessa forma para que o app funcione como esperado é necessário executar paralelamente o projeto backend em sua máquina.
 
+## 💻️ Subindo o projeto em um servidor web
+Para inicializar a aplicação Frontend a Bunge deverá subir a aplicação e configurar um servidor web como por exemplo Nginx e colocar a pasta do projeto. O artefato com os arquivos estáticos do projeto frontend está localizado dentro da pasta do código fonte da aplicação em `/out`.
+
+Lembrando que a aplicação foi construída usando também Next.js, e caso necessite de algum detalhamento a mais para deploy você pode acessar a [página da documentação do Next.js sobre deploying](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports).
+
 ## ⚙️ Requisitos para excutar o projeto Backend
 
 O backend para esta aplicação foi desenvolvido em [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html). Para Instalar o Java 11 seguem abaixo algumas opções:
