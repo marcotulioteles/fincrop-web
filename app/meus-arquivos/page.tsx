@@ -6,6 +6,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 const MyFiles = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -38,7 +40,7 @@ const MyFiles = () => {
 
   useEffect(() => {
     const fetchFiles = async () => {
-      const response = await fetch('http://localhost:8183/documentos', {
+      const response = await fetch(`${BASE_URL}/documentos`, {
         headers: {
           'Authorization': `Bearer ${session?.user.accessToken}`
         }

@@ -1,6 +1,8 @@
 const downloadFile = async (fileName: string, token: string) => {
+  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  
   try {
-    const response = await fetch(`http://localhost:8183/documentos/arquivos-download/${fileName}`, {
+    const response = await fetch(`${BASE_URL}/documentos/documentos/arquivos-download/${fileName}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
       }
