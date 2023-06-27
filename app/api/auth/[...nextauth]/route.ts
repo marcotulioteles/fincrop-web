@@ -18,7 +18,7 @@ const handler = NextAuth({
       try {
         const { email } = profile;
 
-        const response = await fetch('http://localhost:8183/login', {
+        const response = await fetch(`${process.env.API_BASE_URL}/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
