@@ -26,12 +26,7 @@ Para inicializar a aplicação Frontend a Bunge deverá subir a aplicação e co
 Lembrando que a aplicação foi construída usando também Next.js, e caso necessite de algum detalhamento a mais para deploy você pode acessar a [página da documentação do Next.js sobre deploying](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports).
 
 ## Opção 02 de servidor WEB - Deploy na Vercel
-Alternativamente pode também ser usado a plataforma da [VERCEL](https://vercel.com/) por se tratar de uma aplicação Next.js, o que facilita bastante o deploy da applicação frontend como também a configuração das variáveis de ambiente.
-
-## 💻️ Subindo o projeto em um servidor web
-Para inicializar a aplicação Frontend a Bunge deverá subir a aplicação e configurar um servidor web como por exemplo Nginx e colocar a pasta do projeto. O artefato com os arquivos estáticos do projeto frontend está localizado dentro da pasta frontend presente no arquivo zip enviado em `/build`.
-
-Lembrando que a aplicação foi construída usando também Next.js, e caso necessite de algum detalhamento a mais para deploy você pode acessar a [página da documentação do Next.js sobre deploying](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports).
+Alternativamente pode também ser usado a plataforma da [VERCEL](https://vercel.com/) por se tratar de uma aplicação Next.js, o que facilita bastante o deploy da aplicação frontend como também a configuração das variáveis de ambiente.
 
 ## ⚙️ Requisitos para excutar o projeto Backend
 
